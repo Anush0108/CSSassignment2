@@ -1,99 +1,138 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-   
-<meta charset="UTF-8">
-<title style="color:red;">T-shirt store</title>
-<h1>Customize Your T-shirt</h1>
-<h4><i><u>For Rs 200 each</u></i></h4>
+    <meta charset="UTF-8">
+    <title>T-shirt store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h4 {
+            text-align: center;
+            color: #777;
+            font-style: italic;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 <body>
+    <h1>Customize Your T-shirt</h1>
+    <h4><i><u>For Rs 200 each</u></i></h4>
 
-    <p>Name :</p><input type="text"/>
-    <br>
-    <br>
+    <form action="your_server_script.php" method="post">
+        <p>Name :</p><input type="text" name="name">
+        <br><br>
 
-    <p>Address :</p>
-    <textarea rows="3" cols="25">
-    </textarea>
-    <br>
-    <br>
+        <p>Address :</p>
+        <textarea rows="3" cols="25" name="address"></textarea>
+        <br><br>
 
-    <p>Phone No.   :</p><input type="text"/>
-    <br>
-    <br>
+        <p>Phone No. :</p><input type="text" name="phone">
+        <br><br>
 
-    <p>Email Id :</p><input type="email"/>
-    <br>
-    <br>
+        <p>Email Id :</p><input type="email" name="email">
+        <br><br>
 
-    <p>Select type of T-shirt :</p>
-    <select>
-      <option>type-</option>
-      <option>Basic half sleeve</option>
-      <option>Long Sleeve Crew Neck </option>
-      <option>V-neck </option>
-      <option>Polo collar</option>
-      <option>Cap sleeve </option>
-    </select>
-    <br>
-    <br>
+        <p>Select type of T-shirt :</p>
+        <select name="tshirt_type">
+            <option value="">Select type-</option>
+            <option value="Basic half sleeve">Basic half sleeve</option>
+            <option value="Long Sleeve Crew Neck">Long Sleeve Crew Neck</option>
+            <option value="V-neck">V-neck</option>
+            <option value="Polo collar">Polo collar</option>
+            <option value="Cap sleeve">Cap sleeve</option>
+        </select>
+        <br><br>
 
-    <p>Select size of T-shirt :</p>
-    <select>
-      <option >size-</option>
-      <option >XXS</option>
-      <option >S</option>
-      <option>M</option>
-      <option >L</option>
-      <option >XL </option>
-      <option >XXL</option>
-    </select>
-    <br>
-    <br>
+        <p>Select size of T-shirt :</p>
+        <select name="tshirt_size">
+            <option value="">Select size-</option>
+            <option value="XXS">XXS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+        </select>
+        <br><br>
 
-    <p>Tagline to be printed on the T-shirt :</p><input type="text"/>
-<br>
-<br>
+        <p>Tagline to be printed on the T-shirt :</p><input type="text" name="tagline">
+        <br><br>
 
-    <p>No. of T-shirts :</p><input type="number">
-    <br>
-    <br>
+        <p>No. of T-shirts :</p><input type="number" name="quantity">
+        <br><br>
 
-    <p>Color of T-shirt :</p>
-    <input type="checkbox"/>
-    Red
-    <br>
-      <input type="checkbox"/>
-      Navy
-      <br>
-        <input type="checkbox"/>
-        Blue
-        <br>
-          <input type="checkbox"/>
-          Pink
-          <br>
-            <input type="checkbox"/>
-            Green
-            <br>
-              <input type="checkbox"/>
-              Yellow
-              <br>
-                <input type="checkbox"/>
-                Brown
-                <br>
-                  <input type="checkbox"/>
-                  Black
-                  <br>
-                  <br>
+        <p>Color of T-shirt :</p>
+        <input type="checkbox" name="colors[]" value="Red"> Red
+        <input type="checkbox" name="colors[]" value="Navy"> Navy
+        <input type="checkbox" name="colors[]" value="Blue"> Blue
+        <input type="checkbox" name="colors[]" value="Pink"> Pink
+        <input type="checkbox" name="colors[]" value="Green"> Green
+        <input type="checkbox" name="colors[]" value="Yellow"> Yellow
+        <input type="checkbox" name="colors[]" value="Brown"> Brown
+        <input type="checkbox" name="colors[]" value="Black"> Black
+        <br><br>
 
-                <p>  Screenshot of payment:</p>
-                <input type="file"/>
-                <br>
-                <br>
-                <br>
-                <br>
+        <p>Screenshot of payment:</p>
+        <input type="file" name="payment_screenshot">
+        <br><br><br><br>
 
-                <input type="submit"/>
+        <input type="submit" value="Submit">
+    </form>
 </body>
+</html>
